@@ -1,4 +1,4 @@
-class alu_test extends uvm_test;
+      class alu_test extends uvm_test;
   alu_environment env;
   `uvm_component_utils(alu_test)
 
@@ -16,10 +16,8 @@ class alu_test extends uvm_test;
   virtual task run_phase(uvm_phase phase);
     alu_sequence seq;
     phase.raise_objection(this, "Objection Raised");
-  //  for (int i = 0; i < 20; i++) begin
     seq = alu_sequence::type_id::create("seq");
       seq.start(env.active_agnt.seqr);
-  //  end
     phase.drop_objection(this, "Objection Dropped");
   endtask
 
@@ -191,10 +189,10 @@ class alu_test7 extends uvm_test;
 
   virtual task run_phase(uvm_phase phase);
     alu_sequence7 seq;
-    phase.raise_objection(this, "Running alu_test6");
+    phase.raise_objection(this, "Running alu_test7");
     seq = alu_sequence7::type_id::create("seq");
     seq.start(env.active_agnt.seqr);
-    phase.drop_objection(this, "Completed alu_test6");
+    phase.drop_objection(this, "Completed alu_test7");
   endtask
 endclass
 
@@ -217,9 +215,9 @@ class alu_regression_test extends uvm_test;
 
   virtual task run_phase(uvm_phase phase);
     alu_regression seq;
-    phase.raise_objection(this, "Running regression test");
+    phase.raise_objection(this, "Running regression test8");
     seq = alu_regression::type_id::create("seq");
     seq.start(env.active_agnt.seqr);
-    phase.drop_objection(this, "Completed regression test");
+    phase.drop_objection(this, "Completed regression test8");
   endtask
 endclass
